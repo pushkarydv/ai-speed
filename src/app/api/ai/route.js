@@ -29,9 +29,9 @@ export async function POST(req) {
     //   streaming: true,
     // });
 
-    const groq = createOpenAI({
-      baseURL: 'https://api.groq.com/openai/v1',
-      apiKey: process.env.GROQ_CLOUD_API_KEY,
+    const openai = createOpenAI({
+      // baseURL: 'https://api.groq.com/openai/v1',
+      apiKey: process.env.OPENAI_API_KEY,
     });
 
     const vectorStore = new PineconeStore(embeddings, { pineconeIndex });
@@ -46,7 +46,7 @@ export async function POST(req) {
     messages.push({ role: 'system', content: newPrompt });
 
     const result = await streamText({
-      model: groq('llama3-8b-8192'),
+      model: openai('gpt-3.5-turbo'),
       messages,
     });
 
