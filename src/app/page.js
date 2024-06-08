@@ -67,8 +67,6 @@ export default function Home() {
       <div className='text-xs font-mono flex justify-center items-center flex-wrap gap-2 fixed bottom-2 left-0 w-full'>
         <a
           href='https://twitter.com/pushkaryadavin/'
-          target='_blank'
-          rel='noopener noreferrer'
           className='underline'
         >
           @pushkaryadavin
