@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "AI",
-  description: "by WriteWrap Labs",
+  description: "RAG trained on Next.js React Tailwindcss Shadcn Acternuty UI and more Frontend technologies",
 };
 
 export default function RootLayout({ children }) {
