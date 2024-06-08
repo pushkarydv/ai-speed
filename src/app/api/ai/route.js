@@ -23,15 +23,10 @@ export async function POST(req) {
       model: 'text-embedding-3-small',
     });
 
-    const model = new ChatGroq({
+    const groq = createOpenAI({
+      baseURL: 'https://api.groq.com/openai/v1',
       apiKey: process.env.GROQ_CLOUD_API_KEY,
-      model: 'llama3-8b-8192',
-      streaming: true,
     });
-
-    // const openai = createOpenAI({
-    //   apiKey: process.env.OPENAI_API_KEY,
-    // });
 
     const vectorStore = new PineconeStore(embeddings, { pineconeIndex });
 
@@ -45,7 +40,7 @@ export async function POST(req) {
     messages.push({ role: 'system', content: newPrompt });
 
     const result = await streamText({
-      model: model,
+      model: groq('llama3-8b-8192'),
       messages,
     });
 
