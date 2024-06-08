@@ -10,6 +10,7 @@ export default function Home() {
     });
   return (
     <div className='min-h-screen bg-orange-50 p-2'>
+      <div className='fixed top-0 left-0 z-10 opacity-60'>llama-3 mode</div>
       <form
         onSubmit={handleSubmit}
         className={`flex items-center gap-2 w-[90%] md:w-full max-w-2xl p-2 bg-white ring-1 ring-gray-100 rounded-full fixed z-10 left-1/2 -translate-x-1/2 ${
